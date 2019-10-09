@@ -14,7 +14,7 @@ class Piggy(PiggyParent):
         PiggyParent.__init__(self) # run the parent constructor
 
         ''' 
-        MAGIC NUMBERS <-- where we hard-code our settings
+            MAGIC NUMBERS <-- where we hard-code our settings
         '''
         self.LEFT_DEFAULT = 80
         self.RIGHT_DEFAULT = 80
@@ -24,9 +24,9 @@ class Piggy(PiggyParent):
 
     def load_defaults(self):
         """Implements the magic numbers defined in constructor"""
-        self.set_motor_limits(self.MOTOR_LEFT, self.LEFT_DEFAULT)
+        self.set_mo2tor_limits(self.MOTOR_LEFT, self.LEFT_DEFAULT)
         self.set_motor_limits(self.MOTOR_RIGHT, self.RIGHT_DEFAULT)
-        self.set_servo(p.SERVO_1, self.MIDPOINT)
+        self.set_servo(self.SERVO_1, self.MIDPOINT)
         
 
     def menu(self):
@@ -58,9 +58,6 @@ class Piggy(PiggyParent):
         # HIGHER - ORDERED
         for x in range(3):
             self.gavin()
-            self.hype()
-            self.dougie()
-
 
 
     def scan(self):
@@ -84,6 +81,7 @@ class Piggy(PiggyParent):
 
     def gavin(self):
         # crazy spinning around in different directions 
+        self.forward()
         self.left(90)
         self.right(45)
         self.left(90)
