@@ -96,7 +96,6 @@ class Piggy(PiggyParent):
 if __name__ == "__main__":  # only run this loop if this is the main file
 
     p = Piggy()
-
     if sys.version_info < (3, 0):
         sys.stdout.write("Sorry, requires Python 3.x\n")
         p.quit()
