@@ -81,14 +81,12 @@ class Piggy(PiggyParent):
     def gavin(self):
         # crazy spinning around in different directions 
         self.fwd()
-        time.sleep(2)
+        time.sleep(.25)
         self.left()
-        time.sleep(1)
+        time.sleep(.25)
         self.right()
-        time.sleep(3)
         self.stop()
 
-         
     
 
 ###########
