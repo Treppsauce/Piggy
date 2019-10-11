@@ -80,20 +80,16 @@ class Piggy(PiggyParent):
 
     def gavin(self):
         # crazy spinning around in different directions 
-        self.forward()
+        self.fwd()
         time.sleep(2)
-        self.stop()
         self.left()
         time.sleep(1)
-        self.stop()
         self.right()
         time.sleep(3)
         self.stop()
 
          
-       
-
-
+    
 
 ###########
 ## MAIN APP
