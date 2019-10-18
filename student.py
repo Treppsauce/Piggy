@@ -57,8 +57,7 @@ class Piggy(PiggyParent):
     def dance(self):
         # HIGHER - ORDERED
         self.gavin()
-        self.moonwalk()
-        self.infinitydab()
+        #self.infinitydab()
 
 
     def scan(self):
@@ -87,7 +86,7 @@ class Piggy(PiggyParent):
         self.left()
         time.sleep(1)
         self.right()
-        self.stop()
+        self.stop(3)
     
     def moonwalk(self):
         """the robot travels backward and stops and goes every second or 2"""
