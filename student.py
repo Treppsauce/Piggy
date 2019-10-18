@@ -57,7 +57,7 @@ class Piggy(PiggyParent):
     def dance(self):
         # HIGHER - ORDERED
         self.gavin()
-        #self.infinitydab()
+        self.moonwalk()
 
 
     def scan(self):
