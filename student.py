@@ -57,6 +57,7 @@ class Piggy(PiggyParent):
     def dance(self):
         # HIGHER - ORDERED
         self.gavin()
+        self.moonwalk()
 
 
     def scan(self):
@@ -81,11 +82,17 @@ class Piggy(PiggyParent):
     def gavin(self):
         # crazy spinning around in different directions 
         self.fwd()
-        time.sleep(.25)
+        time.sleep(1)
         self.left()
-        time.sleep(.25)
+        time.sleep(1)
         self.right()
         self.stop()
+    
+    def moonwalk(self):
+        self.back()
+        time.sleep(2)
+        self.back()
+        time.sleep(2)
 
     
 
