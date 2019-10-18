@@ -89,6 +89,15 @@ class Piggy(PiggyParent):
         time.sleep(1)
         self.stop()
         time.sleep(1)
+        self.fwd()
+        time.sleep(1)
+        self.left()
+        time.sleep(1)
+        self.right()
+        time.sleep(1)
+        self.stop()
+        time.sleep(1)
+    
     def moonwalk(self):
         """the robot travels backward and stops and goes every second or 2"""
         self.back()
