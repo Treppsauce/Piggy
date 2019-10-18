@@ -58,6 +58,7 @@ class Piggy(PiggyParent):
         # HIGHER - ORDERED
         self.gavin()
         self.moonwalk()
+        self.infinitydab()
 
 
     def scan(self):
@@ -80,7 +81,7 @@ class Piggy(PiggyParent):
     '''
 
     def gavin(self):
-        # crazy spinning around in different directions 
+        """random dance that Gavin likes to do while he works out""" 
         self.fwd()
         time.sleep(1)
         self.left()
@@ -89,6 +90,7 @@ class Piggy(PiggyParent):
         self.stop()
     
     def moonwalk(self):
+        """the robot travels backward and stops and goes every second or 2"""
         self.back()
         time.sleep(2)
         self.back()
@@ -96,8 +98,15 @@ class Piggy(PiggyParent):
         self.back()
         time.sleep(2)
 
-    
-
+    def infintiydab(self):
+        self.fwd()
+        self.servo(2200)
+        self.fwd()
+        self.servo(1200)
+        self.fwd()
+        self.servo(2200)
+        self.fwd()
+        self.servo(1200)
 ###########
 ## MAIN APP
 if __name__ == "__main__":  # only run this loop if this is the main file
