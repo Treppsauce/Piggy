@@ -58,6 +58,7 @@ class Piggy(PiggyParent):
         # HIGHER - ORDERED
         self.gavin()
         self.moonwalk()
+        self.infintiydab()
 
 
     def scan(self):
@@ -102,15 +103,15 @@ class Piggy(PiggyParent):
         """the robot travels backward and changes directions and goes every second or 2"""
         self.back()
         time.sleep(2)
-        self.right()
-        self.left()
-        self.back()
+        self.right(2)
+        self.left(2)
+        self.back(2)
         time.sleep(2)
-        self.right()
-        self.left()
-        self.back()
+        self.right(2)
+        self.left(2)
+        self.back(2)
         time.sleep(2)
-        self.back()
+        self.back(2)
 
     def infintiydab(self):
         self.fwd()
@@ -127,7 +128,7 @@ if __name__ == "__main__":  # only run this loop if this is the main file
 
     p = Piggy()
     if sys.version_info < (3, 0):
-        sys.stdout.write("Sorry, requires Python 3.x\n")
+        sys.stdaout.write("Sorry, requires Python 3.x\n")
         p.quit()
 
     try:
