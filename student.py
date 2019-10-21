@@ -103,11 +103,14 @@ class Piggy(PiggyParent):
         self.back()
         time.sleep(2)
         self.right()
-        slef.left()
+        self.left()
+        self.back()
         time.sleep(2)
         self.right()
-        slef.left()
+        self.left()
+        self.back()
         time.sleep(2)
+        self.back()
 
     def infintiydab(self):
         self.fwd()
