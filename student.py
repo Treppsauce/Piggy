@@ -99,12 +99,14 @@ class Piggy(PiggyParent):
         time.sleep(1)
     
     def moonwalk(self):
-        """the robot travels backward and stops and goes every second or 2"""
+        """the robot travels backward and changes directions and goes every second or 2"""
         self.back()
         time.sleep(2)
-        self.back()
+        self.right()
+        slef.left()
         time.sleep(2)
-        self.back()
+        self.right()
+        slef.left()
         time.sleep(2)
 
     def infintiydab(self):
