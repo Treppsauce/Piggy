@@ -103,15 +103,15 @@ class Piggy(PiggyParent):
         """the robot travels backward and changes directions and goes every second or 2"""
         self.back()
         time.sleep(2)
-        self.right(2)
-        self.left(2)
-        self.back(2)
+        self.right()
+        self.left()
+        self.back()
         time.sleep(2)
-        self.right(2)
-        self.left(2)
-        self.back(2)
+        self.right()
+        self.left()
+        self.back()
         time.sleep(2)
-        self.back(2)
+        self.back()
 
     def infintiydab(self):
         self.fwd()
