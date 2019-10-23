@@ -135,10 +135,13 @@ class Piggy(PiggyParent):
     def infintiydab(self):
         self.fwd()
         self.servo(2200)
+        time.sleep(1)
         self.fwd()
         self.servo(1200)
+        time.sleep(1)
         self.fwd()
         self.servo(2200)
+        time.sleep(1)
         self.fwd()
         self.servo(1200)
 ###########
