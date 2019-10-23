@@ -63,9 +63,9 @@ class Piggy(PiggyParent):
         else:
             print("WE CHILLIN, watch me dance like Gavin")
         for x in range (3):
-        self.gavin()
-        self.moonwalk()
-        self.infintiydab()
+            self.gavin()
+            self.moonwalk()
+            self.infintiydab()
 
     def safe_to_dance(self):
         """Does a 360 dinstance check and returns true if save"""
