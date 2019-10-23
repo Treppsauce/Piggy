@@ -57,7 +57,7 @@ class Piggy(PiggyParent):
     def dance(self):
         # HIGHER - ORDERED
         #Check to see if it is save
-        if not self.safety_check():
+        if not self.safe_to_dance():
             print("This is so stupid. I aint gon dance moron")
             return # return closes down the method 
         else:
