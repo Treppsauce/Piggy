@@ -44,7 +44,7 @@ class Piggy(PiggyParent):
         for key in sorted(menu.keys()):
             print(key + ":" + menu[key][0])
         # store the user's answer
-         ans = str.lower(input("Your selection: "))
+            ans = str.lower(input("Your selection: "))
         # activate the item selected
             menu.get(ans, [None, self.quit])[1]()
 
