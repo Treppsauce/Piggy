@@ -56,9 +56,28 @@ class Piggy(PiggyParent):
 
     def dance(self):
         # HIGHER - ORDERED
+        #Check to see if it is savew=
+        if not self.saftey_check():
+            print("This is so stupid. I aint gon dance moron")
+            return # return closes down the method 
+        else:
+            print("WE CHILLIN, watch me dance like Gavin")
+        for x in range (3):
         self.gavin()
         self.moonwalk()
         self.infintiydab()
+
+    def safe_to_dance(self):
+        """Does a 360 dinstance check and returns true if save"""
+        for x in range(4):
+            for ang in range(1000, 2001, 100):
+                self.servo(ang)
+                time.sleep(.1)
+                if self.read_distance() < 250:
+                    return False
+            self.turn_by_deg(90)
+        return True 
+
 
 
     def scan(self):
