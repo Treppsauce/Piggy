@@ -63,7 +63,7 @@ class Piggy(PiggyParent):
         else:
             print("WE CHILLIN, watch me dance like Gavin")
         for x in range (3):
-            #self.gavin()
+            self.gavin()
             self.moonwalk()
             #self.infintiydab()
 
