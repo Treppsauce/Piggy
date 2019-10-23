@@ -101,8 +101,6 @@ class Piggy(PiggyParent):
 
     def gavin(self):
         """random dance that Gavin likes to do while he works out""" 
-        self.fwd()
-        time.sleep(1)
         self.left()
         time.sleep(1)
         self.right()
@@ -122,28 +120,32 @@ class Piggy(PiggyParent):
         """the robot travels backward and changes directions and goes every second or 2"""
         self.back()
         time.sleep(2)
-        self.right()
-        self.left()
+        self.servo(1000, 2001, 100)
         self.back()
         time.sleep(2)
-        self.right()
-        self.left()
+        self.servo(1000, 2001, 100)
         self.back()
         time.sleep(2)
+        self.servo(1000, 2001, 100)
         self.back()
+        time.sleep(2)
+        self.servo(1000, 2001, 100)
+        self.back()
+        time.sleep(2)
+        self.servo(1000, 2001, 100)
 
     def infintiydab(self):
         self.fwd()
-        self.servo(2200)
+        self.servo(1000, 2001)
         time.sleep(1)
         self.fwd()
-        self.servo(1200)
+        self.servo(1000, 2001)
         time.sleep(1)
         self.fwd()
-        self.servo(2200)
+        self.servo(1000, 2001)
         time.sleep(1)
         self.fwd()
-        self.servo(1200)
+        self.servo(1000, 2001)
 ###########
 ## MAIN APP
 if __name__ == "__main__":  # only run this loop if this is the main file
