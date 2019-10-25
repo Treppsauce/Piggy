@@ -63,7 +63,7 @@ class Piggy(PiggyParent):
         else:
             print("WE CHILLIN, watch me dance like Gavin")
         for x in range (3):
-            self.gavin()
+            #self.gavin()
             self.moonwalk()
             #self.infintiydab()
 
@@ -101,58 +101,38 @@ class Piggy(PiggyParent):
 
     def gavin(self):
         """random dance that Gavin likes to do while he works out""" 
+        self.turn_by_deg(90)
+        time.sleep(.25)
+        self.LEFT_DEFAULT()
+        time.sleep(.25)
+        self.turn_by_deg(90)
+        time.sleep(.25)
         self.left()
-        time.sleep(1)
-        self.right()
-        time.sleep(1)
-        self.stop()
-        time.sleep(1)
+        self.turn_by_deg(90)
+        time.sleep(.25)
         self.left()
-        self.right()
-        time.sleep(1)
+        self.turn_by_deg(90)
+        time.sleep(.25)
         self.left()
-        self.right()
-        time.sleep(1)
-        self.left()
-        self.right()
+        self.turn_by_deg(90)
         time.sleep(1)
         self.stop()
     
     def moonwalk(self):
         """the robot travels backward and changes directions and goes every second or 2"""
-        self.back()
-        time.sleep(2)
-        self.servo(1000, 2001, 200)
-        self.stop()
-        self.back()
-        time.sleep(2)
-        self.servo(1000, 2001, 200)
-        self.stop()
-        self.back()
-        time.sleep(2)
-        self.servo(1000, 2001, 200)
-        self.stop()
-        self.back()
-        time.sleep(2)
-        self.servo(1000, 2001, 200)
-        self.stop()
-        self.back()
-        time.sleep(2)
-        self.servo(1000, 2001, 200)
-        self.stop()
-
+        for x in range(3):
+            self.back()
+            self.servo(2000)
+            time.sleep(.25)
+            self.stop()
+            
     def infintiydab(self):
-        self.fwd()
-        self.servo(1000, 2001)
-        time.sleep(1)
-        self.fwd()
-        self.servo(1000, 2001)
-        time.sleep(1)
-        self.fwd()
-        self.servo(1000, 2001)
-        time.sleep(1)
-        self.fwd()
-        self.servo(1000, 2001)
+        self.right()
+        self.servo(1000)
+        time.sleep(.5)
+        self.left()
+        self.servo(2000)
+        time.sleep(.5)
 ###########
 ## MAIN APP
 if __name__ == "__main__":  # only run this loop if this is the main file
