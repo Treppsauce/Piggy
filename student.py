@@ -62,10 +62,10 @@ class Piggy(PiggyParent):
             return # return closes down the method 
         else:
             print("WE CHILLIN, watch me dance like Gavin")
-        for x in range ():
-            #self.gavin()
+        for x in range (3):
+            self.gavin()
             self.moonwalk()
-            #self.infintiydab()
+            self.infintiydab()
 
     def safe_to_dance(self):
         """Does a 360 dinstance check and returns true if save"""
