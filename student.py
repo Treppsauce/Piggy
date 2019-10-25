@@ -127,12 +127,13 @@ class Piggy(PiggyParent):
             
     def infintiydab(self):
         for x in range(3):
-        self.right()
-        self.servo(1000)
-        time.sleep(.5)
-        self.left()
-        self.servo(2000)
-        time.sleep(.5)
+            self.right()
+            self.servo(1000)
+            time.sleep(.5)
+            self.left()
+            self.servo(2000)
+            time.sleep(.5)
+
 ###########
 ## MAIN APP
 if __name__ == "__main__":  # only run this loop if this is the main file
