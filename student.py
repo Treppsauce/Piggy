@@ -125,7 +125,6 @@ class Piggy(PiggyParent):
             self.servo(2000)
             time.sleep(.25)
             self.stop()
-            
     def infintiydab(self):
         self.right()
         self.servo(1000)
