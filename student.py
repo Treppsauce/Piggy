@@ -62,7 +62,7 @@ class Piggy(PiggyParent):
             return # return closes down the method 
         else:
             print("WE CHILLIN, watch me dance like Gavin")
-        for x in range (3):
+        for x in range ():
             #self.gavin()
             self.moonwalk()
             #self.infintiydab()
@@ -119,12 +119,12 @@ class Piggy(PiggyParent):
         self.stop()
     
     def moonwalk(self):
-        """the robot travels backward and changes directions and goes every second or 2"""
+        """the robot travels backward and changes directions and servos"""
         for x in range(3):
             self.back()
             self.servo(2000)
             time.sleep(.25)
-            self.stop()
+            
     def infintiydab(self):
         self.right()
         self.servo(1000)
