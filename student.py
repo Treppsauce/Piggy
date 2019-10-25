@@ -103,15 +103,15 @@ class Piggy(PiggyParent):
         """random dance that Gavin likes to do while he works out""" 
         self.turn_by_deg(90)
         time.sleep(.25)
-        self.turn_by_deg(-90)
+        self.turn_by_deg(-180)
         time.sleep(.25)
         self.turn_by_deg(90)
         time.sleep(.25)
-        self.turn_by_deg(-90)
+        self.turn_by_deg(-180)
         time.sleep(.25)
         self.turn_by_deg(90)
         time.sleep(.25)
-        self.turn_by_deg(-90)
+        self.turn_by_deg(-180)
         time.sleep(1)
         self.stop()
     
@@ -126,6 +126,7 @@ class Piggy(PiggyParent):
             time.sleep(.5)
             
     def infintiydab(self):
+        for x in range(3):
         self.right()
         self.servo(1000)
         time.sleep(.5)
