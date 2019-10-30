@@ -87,7 +87,22 @@ class Piggy(PiggyParent):
             self.scan_data[angle] = self.read_distance()
 
     def obstacle_count(self):
-        print("I can't count how many obstacles are around me. Please give my programmer a zero.")
+        """Does a 360 scan and returns the number of obstacles it sees"""
+        found_something = False
+        count = 0 
+        starting_position = self.get_heading()
+        self.right(primary=60, counter=-60)
+        while self.get_heading() !=starting_position: 
+            if self.read_distance() < 250 and not found_something:
+                found_something = True
+                count+= 1 
+            elif self.read_distance() > 250 and found_something:
+                found_something = False 
+                print("I have a clear view. Resetting my count")
+        self.stop()
+        print("I found this many things:%d" % count)
+        return count 
+        
 
     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
@@ -106,7 +121,8 @@ class Piggy(PiggyParent):
         self.turn_by_deg(-180)
         time.sleep(.25)
         self.turn_by_deg(90)
-        time.sleep(.25)
+        time.sleep(.25)`3W222222222223
+        
         self.turn_by_deg(-180)
         time.sleep(.25)
         self.turn_by_deg(90)
