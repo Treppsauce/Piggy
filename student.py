@@ -110,6 +110,7 @@ class Piggy(PiggyParent):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
         while True:
+            self.servo(self.MIDPOINT) # set servo back to mid point 
             while self.read_distance() > 250: #this is the distance when the servo sees the obsitcal and turs 
                 self.fwd() #simply goes foward 
             self.turn_by_deg(90)  #this is what the robot does when it sees an obstical 
