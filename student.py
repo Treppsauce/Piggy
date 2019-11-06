@@ -119,7 +119,7 @@ class Piggy(PiggyParent):
             left_count = 0 
             right_total = 0
             right_count = 0 
-            for ang, dist in enumerate(self.scan_data): #data dictionary  
+            for ang, dist in self.scan_data.items(): #data dictionary  
                 if ang < self. MIDPOINT:  #this is averaging all the distances 
                     right_total +=dist
                     right_count += 1 
