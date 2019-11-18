@@ -48,10 +48,11 @@ class Piggy(PiggyParent):
         # activate the item selected
         menu.get(ans, [None, self.quit])[1]()
 
+    """
     ****************
     STUDENT PROJECTS
     ****************
-  
+    """
 
     def dance(self):
         # HIGHER - ORDERED
@@ -60,9 +61,7 @@ class Piggy(PiggyParent):
             print("This is so stupid. I aint gon dance moron")
             return # return closes down the method 
         else:
-             print("WE CHILLIN, watch
-            
-             me dance like Gavin")
+            print("WE CHILLIN, watch me dance like Gavin")
         for x in range (3):
             self.gavin()
             self.moonwalk()
@@ -105,7 +104,7 @@ class Piggy(PiggyParent):
         return count 
         
     """Navigation code with checks using the servo"""
-     def nav(self):
+    def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
@@ -135,6 +134,8 @@ class Piggy(PiggyParent):
                 self.turn_by_deg(-45)
             else:
                 self.turn_by_deg(45)
+    
+    '''
     DANCE METHODS
     '''
 
@@ -180,7 +181,7 @@ if __name__ == "__main__":  # only run this loop if this is the main file
 
     p = Piggy()
     if sys.version_info < (3, 0):
-        sys.stdaout.write("Sorry, requires Python 3.x\n")
+        sys.stdout.write("Sorry, requires Python 3.x\n")
         p.quit()
 
     try:
