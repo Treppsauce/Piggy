@@ -48,11 +48,10 @@ class Piggy(PiggyParent):
         # activate the item selected
         menu.get(ans, [None, self.quit])[1]()
 
-    '''
     ****************
     STUDENT PROJECTS
     ****************
-    '''
+  
 
     def dance(self):
         # HIGHER - ORDERED
@@ -61,7 +60,9 @@ class Piggy(PiggyParent):
             print("This is so stupid. I aint gon dance moron")
             return # return closes down the method 
         else:
-            print("WE CHILLIN, watch me dance like Gavin")
+             print("WE CHILLIN, watch
+            
+             me dance like Gavin")
         for x in range (3):
             self.gavin()
             self.moonwalk()
@@ -76,7 +77,7 @@ class Piggy(PiggyParent):
                 if self.read_distance() < 250:
                     return False
             self.turn_by_deg(90)
-        return True 
+        return True
 
 
 
@@ -104,36 +105,36 @@ class Piggy(PiggyParent):
         return count 
         
     """Navigation code with checks using the servo"""
-    def nav(self):
+     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
-        while True:
-            self.servo(self.MIDPOINT) # set servo back to mid point 
-            while self.read_distance() > 250: #this is the distance when the servo sees the obsitcal and turs 
-                self.fwd() #simply goes foward 
-            self.turn_by_deg(90)  #this is what the robot does when it sees an obstical 
-            self.scan()
+        while True:    
+            while self.read_distance() > 250:
+                self.fwd()
+                time.sleep(.01)
+            self.stop()
+            self.shakeHeadInDisgust()
+            self.scan()            
             #traversal
-            left_total = 0 #are count that are set to 0 
-            left_count = 0 
+            left_total = 0
+            left_count = 0
             right_total = 0
-            right_count = 0 
-            for ang, dist in self.scan_data.items(): #data dictionary  
-                if ang < self. MIDPOINT:  #this is averaging all the distances 
-                    right_total +=dist
-                    right_count += 1 
+            right_count = 0
+            for ang, dist in self.scan_data.items():
+                if ang < self.MIDPOINT: 
+                    right_total += dist
+                    right_count += 1
                 else:
-                    left_total += dist   #this is also averaging all the disances 
+                    left_total += dist
                     left_count += 1
             left_avg = left_total / left_count
             right_avg = right_total / right_count
             if left_avg > right_avg:
                 self.turn_by_deg(-45)
             else:
-                self.turn_by_deg(45) 
-    '''
+                self.turn_by_deg(45)
     DANCE METHODS
     '''
 
