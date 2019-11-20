@@ -105,17 +105,26 @@ class Piggy(PiggyParent):
         
     """Navigation code with checks using the servo"""
     def nav(self):
-        print("-----------! NAVIGATION ACTIVATED !------------\n")
+​        print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
+        
+        corner_count = 0
+        self.EXIT_HEADING = self.get_heading()
+        
         while True:    
-            while self.read_distance() > 250:
+            self.servo(self.MIDPOINT)
+            while self.quick_check():
+                corner_count = 0
                 self.fwd()
                 time.sleep(.01)
             self.stop()
-            self.shakeHeadInDisgust()
-            self.scan()            
+            self.scan()
+            # turns out of cornoer if stuck
+            corner_count += 1
+            if corner_count > 3:
+                self.turntoexit()
             #traversal
             left_total = 0
             left_count = 0
@@ -133,48 +142,7 @@ class Piggy(PiggyParent):
             if left_avg > right_avg:
                 self.turn_by_deg(-45)
             else:
-                self.turn_by_deg(45)
-    
-    '''
-    DANCE METHODS
-    '''
-
-    def gavin(self):
-        """random dance that Gavin likes to do while he works out""" 
-        self.turn_by_deg(90)
-        time.sleep(.25)
-        self.turn_by_deg(-180)
-        time.sleep(.25)
-        self.turn_by_deg(90)
-        time.sleep(.25)
-        
-        self.turn_by_deg(-180)
-        time.sleep(.25)
-        self.turn_by_deg(90)
-        time.sleep(.25)
-        self.turn_by_deg(-180)
-        time.sleep(1)
-        self.stop()
-    
-    def moonwalk(self):
-        """the robot travels backward and changes directions and servos"""
-        for x in range(3):
-            self.back()
-            self.servo(2000)
-            time.sleep(.25)
-            self.servo(1000)
-            self.stop()
-            time.sleep(.5)
-            
-    def infintiydab(self):
-        for x in range(3):
-            self.right()
-            self.servo(1000)
-            time.sleep(.5)
-            self.left()
-            self.servo(2000)
-            time.sleep(.5)
-
+                self.turn_by_deg(45)   
 ###########
 ## MAIN APP
 if __name__ == "__main__":  # only run this loop if this is the main file
