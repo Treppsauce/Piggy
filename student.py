@@ -78,7 +78,12 @@ class Piggy(PiggyParent):
             self.turn_by_deg(90)
         return True
 
-
+    def quick_check(self):
+        for x in range(self.MIDPOINT-200, self.MIDPOINT+201, 200):
+            self.servo(x)
+            if self.read_distance() < 250:
+                return False
+        return True
 
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
@@ -108,7 +113,7 @@ class Piggy(PiggyParent):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
-        print("Hold up this ain't right. \nI can't navigate the maze at all. Please give my programmer a zero.")
+        print("Hold up this ain't right. \nthe maze is stupid. Please figure it out buddy.")
         
         corner_count = 0
         self.EXIT_HEADING = self.get_heading()
