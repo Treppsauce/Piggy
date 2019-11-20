@@ -105,10 +105,10 @@ class Piggy(PiggyParent):
         
     """Navigation code with checks using the servo"""
     def nav(self):
-​        print("-----------! NAVIGATION ACTIVATED !------------\n")
+        print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
-        print("Wait a second. \nI can't navigate the maze at all. Please give my programmer a zero.")
+        print("Hold up this ain't right. \nI can't navigate the maze at all. Please give my programmer a zero.")
         
         corner_count = 0
         self.EXIT_HEADING = self.get_heading()
