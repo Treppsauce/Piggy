@@ -106,7 +106,15 @@ class Piggy(PiggyParent):
                 print("I have a clear view. Resetting my count")
         self.stop()
         print("I found this many things:%d" % count)
-        return count 
+        return count
+    def corner_escape(self):
+        """robot turns around then turns right. checks if that way is clear, if not checks left"""
+        self.turn_by_deg(180)
+        self.fwd()
+        self.turn_by_deg(90)
+
+
+
         
     """Navigation code with checks using the servo"""
     def nav(self):
@@ -129,7 +137,7 @@ class Piggy(PiggyParent):
             # turns out of cornoer if stuck
             corner_count += 1
             if corner_count > 3:
-                self.turntoexit()
+                self.corner_escape()
             #traversal
             left_total = 0
             left_count = 0
