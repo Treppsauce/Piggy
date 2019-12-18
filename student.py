@@ -154,8 +154,7 @@ class Piggy(PiggyParent):
                 left_speed -= 10
             self.set_motor_power(self.MOTOR_LEFT, left_speed)
             self.set_motor_power(self.MOTOR_RIGHT, right_speed) 
-            time.sleep(.1)
-​
+            time.sleep(.1)  
     """Navigation code with checks using the servo"""
     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
