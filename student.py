@@ -115,7 +115,7 @@ class Piggy(PiggyParent):
         self.fwd()
         self.turn_by_deg(90)
     
-     def slither(self):
+    def slither(self):
         """ practice a smooth veer """
         # write down where we started
         starting_direction = self.get_heading()
