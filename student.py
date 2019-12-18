@@ -39,7 +39,8 @@ class Piggy(PiggyParent):
                 "o": ("Obstacle count", self.obstacle_count),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "h": ("Hold position", self.hold_position)
+                "h": ("Hold position", self.hold_position),
+                "v": ("veer", self.slither)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -113,10 +114,50 @@ class Piggy(PiggyParent):
         self.turn_by_deg(180)
         self.fwd()
         self.turn_by_deg(90)
-
-
-
+    
+     def slither(self):
+        """ practice a smooth veer """
+        # write down where we started
+        starting_direction = self.get_heading()
+        # start driving forward
+        self.set_motor_power(self.MOTOR_LEFT, self.LEFT_DEFAULT)
+        self.set_motor_power(self.MOTOR_RIGHT, self.RIGHT_DEFAULT)
+        self.fwd() 
+        # throttle down the left motor
+        for power in range(self.LEFT_DEFAULT, 30, -10):
+            self.set_motor_power(self.MOTOR_LEFT, power)
+            time.sleep(.5)
         
+        # throttle up the left 
+        for power in range(30, self.LEFT_DEFAULT + 1, 10):
+            self.set_motor_power(self.MOTOR_LEFT, power)
+            time.sleep(.1)
+​
+        # throttle down the right
+        for power in range(self.RIGHT_DEFAULT, 30, -10):
+            self.set_motor_power(self.MOTOR_RIGHT, power)
+            time.sleep(.5)
+        
+        # throttle up the right 
+        for power in range(30, self.RIGHT_DEFAULT + 1, 10):
+            self.set_motor_power(self.MOTOR_RIGHT, power)
+            time.sleep(.1)        
+​
+        left_speed = self.LEFT_DEFAULT
+        right_speed = self.RIGHT_DEFAULT
+        
+        # straigten out
+        while self.get_heading() != starting_direction:
+            # if I need to veer right
+            if self.get_heading() < starting_direction:
+                right_speed -= 10
+            # if I need to veer left
+            elif self.get_heading() > starting_direction:
+                left_speed -= 10
+            self.set_motor_power(self.MOTOR_LEFT, left_speed)
+            self.set_motor_power(self.MOTOR_RIGHT, right_speed) 
+            time.sleep(.1)
+​
     """Navigation code with checks using the servo"""
     def nav(self):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
